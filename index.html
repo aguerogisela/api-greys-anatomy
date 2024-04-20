@@ -41,7 +41,7 @@
 							<li><a href="#">lorem</a></li>
 						</ul>
 						<ul>
-							<li><a href="#">Coding2go</a></li>
+							<li><a href="#">GreysIlovesdas</a></li>
 							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
 							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
 							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
@@ -66,33 +66,33 @@
 					</nav>
 				</header>
 				<!-- ***main con cards*** -->
-				<main class="">
-					<div class="spinner_container hidden">
-						<img src="svg-spinners--180-ring.svg" alt="Loading" />
-					</div>
-					<form id="filtros">
-						<select name="comision" id="comision">
-							<option value="">comision...</option>
-							<option value="19">19va comision</option>
-							<option value="20">20va comision</option>
-							<option value="21">21va comision</option>
-							<option value="22">22va comision</option>
-						</select>
-						<select name="modalidad" id="modalidad">
-							<option value="">modalidad...</option>
-							<option value="sincronico">Sincrónica</option>
-							<option value="asincronica">Asincrónica</option>
-						</select>
-						<select name="lenguajeFavorito" id="lenguajeFavorito">
-							<option value="">lenguaje favorito...</option>
-							<option value="python">Python</option>
-							<option value="JS">JS</option>
-							<option value="PHP">PHP</option>
-						</select>
-					</form>
 
+				<div class="spinner_container hidden">
+					<img src="svg-spinners--180-ring.svg" alt="Loading" />
+				</div>
+				<main>
 					<div id="main-container">
-						<div class="card">
+						<form id="filtros">
+							<select name="comision" id="comision">
+								<option value="">comision...</option>
+								<option value="19">19va comision</option>
+								<option value="20">20va comision</option>
+								<option value="21">21va comision</option>
+								<option value="22">22va comision</option>
+							</select>
+							<select name="modalidad" id="modalidad">
+								<option value="">modalidad...</option>
+								<option value="sincronico">Sincrónica</option>
+								<option value="asincronica">Asincrónica</option>
+							</select>
+							<select name="lenguajeFavorito" id="lenguajeFavorito">
+								<option value="">lenguaje favorito...</option>
+								<option value="python">Python</option>
+								<option value="JS">JS</option>
+								<option value="PHP">PHP</option>
+							</select>
+						</form>
+						<!-- <div class="card">
 							<img class="card-img" src="" alt="" />
 							<div class="card-body">
 								<h1 class="card-title">Meredith Grey</h1>
@@ -100,28 +100,94 @@
 
 								<button class="card-btn">mas detalles</button>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</main>
-
-				<div class="modal-info">
-					<div class="card-modal">
-						<img class="movie-img" src="" alt="Imagen de personajes" />
-						<div class="text-movie-cont">
-							<h1>Interstellar</h1>
-							<ul class="movie-gen">
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-							<p class="movie-description"></p>
-							<div class="card-buttons">
-								<button class="edit-button">Editar</button>
-								<button class="delete-button">Eliminar</button>
-							</div>
+				<!-- <div class="modal-info" id="modal"></div>
+				<div class="card-modal">
+					<img class="movie-img" src="" alt="Imagen de personajes" />
+					<div class="text-movie-cont">
+						<h1>Interstellar</h1>
+						<ul class="movie-gen">
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<p class="movie-description"></p>
+						<div class="card-buttons">
+							<button class="edit-button">Editar</button>
+							<button class="delete-button">Eliminar</button>
 						</div>
 					</div>
-				</div>
+				</div> -->
+
+				<!-- <div class="container-form-agregar">
+					<div class="custom-container">
+						<form class="custom-form" action="" method="post">
+							<h3>Agregar tu personaje</h3>
+							<h4>Recuerda...</h4>
+							<fieldset>
+								<label for="nombre">Nombre de personaje</label>
+								<input
+									type="text"
+									placeholder="Ej. Meredith Grey"
+									tabindex="1"
+									required
+									autofocus
+								/>
+							</fieldset>
+							<fieldset>
+								<label for="especialidad">Especialidad</label>
+								<input
+									type="text"
+									placeholder="Ej. Cirugía general"
+									tabindex="2"
+									required
+								/>
+							</fieldset>
+							<fieldset>
+								<label for="temporadas">Temporadas en las que aparece</label>
+								<input
+									type="number"
+									placeholder="Ej. 20"
+									tabindex="3"
+									required
+								/>
+							</fieldset>
+							<fieldset>
+								<label for="estado">Estado</label>
+								<input
+									type="text"
+									placeholder="Ej. Vivo"
+									tabindex="4"
+									required
+								/>
+							</fieldset>
+							<fieldset>
+								<label for="imagen">Imagen</label>
+								<input
+									type="url"
+									placeholder="Ej. https://ejemplo.jpg"
+									tabindex="5"
+									required
+								/>
+							</fieldset>
+							<fieldset>
+								<label for="descripcion">Descripción</label>
+								<textarea
+									placeholder="Ej. Meredith es la protagonista principal de la serie..."
+									tabindex="6"
+									required
+								></textarea>
+							</fieldset>
+							<fieldset>
+								<button type="submit" name="submit" data-submit="...Sending">
+									Agregar personaje
+								</button>
+							</fieldset>
+						</form>
+					</div>
+				</div> -->
 
 				<script src="dom.js"></script>
 				<script src="main.js"></script>
