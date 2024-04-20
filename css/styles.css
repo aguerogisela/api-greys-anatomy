@@ -1,0 +1,300 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+body {
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)),
+		url("https://images.justwatch.com/poster/300810915/s332/temporada-19")
+			no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: "Montserrat", sans-serif;
+}
+
+header {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: rgba(255, 255, 255, 0.06);
+	position: relative;
+	z-index: 1000;
+}
+
+nav {
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+	padding: 0px 40px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1000;
+}
+
+nav ul {
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	max-width: 1000px;
+}
+
+nav li {
+	height: 50px;
+}
+
+nav a {
+	height: 100%;
+	padding: 0 30px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: rgb(255, 255, 255);
+}
+
+nav a:hover {
+	background-color: #f0f0f0;
+}
+
+nav li:first-child {
+	margin-right: auto;
+}
+
+.barra-lateral {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	z-index: 2000;
+}
+
+.barra-lateral li {
+	width: 100%;
+}
+
+.barra-lateral a {
+	width: 100%;
+}
+
+.menu-button {
+	display: none;
+}
+
+@media (max-width: 800px) {
+	.ocultarEnMovil {
+		display: none;
+	}
+	.menu-button {
+		display: block;
+	}
+}
+@media (max-width: 400px) {
+	.barra-lateral {
+		width: 1;
+	}
+}
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#main-container {
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+@media screen and (max-width: 780px) {
+	#main-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+.card {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.card-body {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: -100%;
+	position: absolute;
+	background: rgba(31, 61, 71, 0.2196078431);
+	backdrop-filter: blur(5px);
+	border-radius: 15px;
+	color: #fff;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6px;
+	transition: 2s;
+}
+
+.card:hover .card-body {
+	right: 0;
+}
+
+.card-title {
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.card-sub-title {
+	text-transform: capitalize;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.card-info {
+	font-size: 16px;
+	line-height: 25px;
+	margin: 40px 0;
+	font-weight: 400;
+}
+
+.card-btn {
+	color: #1f3d47;
+	background: #2eabee;
+	padding: 10px 20px;
+	width: 120px;
+	border-radius: 5px;
+	text-transform: capitalize;
+	border: none;
+	outline: none;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.modal-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: white;
+}
+
+.card-modal {
+	width: 90%;
+	max-width: 600px;
+	background-color: #1e1b26;
+	box-shadow: 5px 5px 115px -14px black;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+}
+
+.movie-img {
+	width: 100%;
+	object-fit: cover;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.text-movie-cont {
+	padding: 20px;
+	flex: 1;
+}
+
+.movie-gen li {
+	display: inline-block;
+	background-color: #fe4141;
+	color: white;
+	border-radius: 15px;
+	padding: 5px 10px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+.movie-description {
+	color: #9b9b9b;
+	font-size: 14px;
+	text-align: justify;
+	line-height: 1.5;
+}
+
+.card-buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	border-top: 1px solid #2e2b3b;
+}
+
+.edit-button,
+.delete-button {
+	background-color: #fe4141;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 780px) {
+	.card-modal {
+		flex-direction: row;
+	}
+	.movie-img {
+		width: 50%;
+		border-radius: 4px 0 0 4px;
+	}
+	.text-movie-cont {
+		width: 50%;
+		padding: 20px;
+		border-radius: 0 4px 4px 0;
+	}
+}
+@media screen and (max-width: 780px) {
+	.card {
+		width: 160px;
+		height: 160px;
+	}
+	.card-title {
+		font-size: 16px;
+	}
+	.card-btn {
+		padding: 5px 9px;
+		width: 100px;
+	}
+	.card-sub-title {
+		padding-bottom: 3px;
+	}
+}
+
+/*# sourceMappingURL=styles.css.map */

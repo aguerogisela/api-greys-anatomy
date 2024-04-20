@@ -1,0 +1,15 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+}
+body {
+	background: linear-gradient(rgba(30, 27, 38, 0.95), rgba(30, 27, 38, 0.95)),
+		url("https://images.justwatch.com/poster/300810915/s332/temporada-19")
+			no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: "Montserrat", sans-serif;
+}

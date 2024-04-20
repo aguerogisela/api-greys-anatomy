@@ -1,0 +1,8 @@
+@import "base/reset.scss";
+// ***********
+@import "layout/header.scss"; // Importa el archivo _header.scss
+@import "layout/main.scss";
+@import "layout/forms.scss";
+
+// ****componentes******
+@import "componentes/cards.scss";

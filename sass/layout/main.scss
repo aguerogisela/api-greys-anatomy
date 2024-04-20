@@ -1,0 +1,21 @@
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#main-container {
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+@media screen and (max-width: 780px) {
+	#main-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}

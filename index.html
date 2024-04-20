@@ -3,7 +3,129 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>git</title>
+		<title></title>
 	</head>
-	<body></body>
+	<body>
+		<!-- **** Header **** -->
+		<!DOCTYPE html>
+		<html lang="en">
+			<head>
+				<meta charset="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="icon" type="image/png" href="../images/favicon.png" />
+				<link rel="stylesheet" href="css/styles.css" />
+				<title>Document</title>
+			</head>
+			<body>
+				<header>
+					<nav>
+						<ul class="barra-lateral">
+							<li id="botonOcultar">
+								<a href="#">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										height="26"
+										viewBox="0 96 960 960"
+										width="26"
+									>
+										<path
+											d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+										/>
+									</svg>
+								</a>
+							</li>
+							<li><a href="#">lorem</a></li>
+							<li><a href="#">lorem</a></li>
+							<li><a href="#">lorem</a></li>
+							<li><a href="#">lorem</a></li>
+							<li><a href="#">lorem</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">Coding2go</a></li>
+							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+							<li class="menu-button" id="botonMostrar">
+								<a href="#">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										height="26"
+										viewBox="0 96 960 960"
+										width="26"
+										color="white"
+									>
+										<path
+											d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+										/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</header>
+				<!-- ***main con cards*** -->
+				<main class="">
+					<div class="spinner_container hidden">
+						<img src="svg-spinners--180-ring.svg" alt="Loading" />
+					</div>
+					<form id="filtros">
+						<select name="comision" id="comision">
+							<option value="">comision...</option>
+							<option value="19">19va comision</option>
+							<option value="20">20va comision</option>
+							<option value="21">21va comision</option>
+							<option value="22">22va comision</option>
+						</select>
+						<select name="modalidad" id="modalidad">
+							<option value="">modalidad...</option>
+							<option value="sincronico">Sincrónica</option>
+							<option value="asincronica">Asincrónica</option>
+						</select>
+						<select name="lenguajeFavorito" id="lenguajeFavorito">
+							<option value="">lenguaje favorito...</option>
+							<option value="python">Python</option>
+							<option value="JS">JS</option>
+							<option value="PHP">PHP</option>
+						</select>
+					</form>
+
+					<div id="main-container">
+						<div class="card">
+							<img class="card-img" src="" alt="" />
+							<div class="card-body">
+								<h1 class="card-title">Meredith Grey</h1>
+								<p class="card-sub-title">new your city</p>
+
+								<button class="card-btn">mas detalles</button>
+							</div>
+						</div>
+					</div>
+				</main>
+
+				<div class="modal-info">
+					<div class="card-modal">
+						<img class="movie-img" src="" alt="Imagen de personajes" />
+						<div class="text-movie-cont">
+							<h1>Interstellar</h1>
+							<ul class="movie-gen">
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<p class="movie-description"></p>
+							<div class="card-buttons">
+								<button class="edit-button">Editar</button>
+								<button class="delete-button">Eliminar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="dom.js"></script>
+				<script src="main.js"></script>
+			</body>
+		</html>
+	</body>
 </html>
