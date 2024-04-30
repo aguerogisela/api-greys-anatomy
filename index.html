@@ -3,96 +3,87 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title></title>
+		<link rel="icon" type="image/png" href="../images/favicon.png" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<title>Document</title>
 	</head>
 	<body>
-		<!-- **** Header **** -->
-		<!DOCTYPE html>
-		<html lang="en">
-			<head>
-				<meta charset="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="icon" type="image/png" href="../images/favicon.png" />
-				<link rel="stylesheet" href="css/styles.css" />
-				<title>Document</title>
-			</head>
-			<body>
-				<header>
-					<nav>
-						<ul class="barra-lateral">
-							<li id="botonOcultar">
-								<a href="#">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										height="26"
-										viewBox="0 96 960 960"
-										width="26"
-									>
-										<path
-											d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-										/>
-									</svg>
-								</a>
-							</li>
-							<li><a href="#">lorem</a></li>
-							<li><a href="#">lorem</a></li>
-							<li><a href="#">lorem</a></li>
-							<li><a href="#">lorem</a></li>
-							<li><a href="#">lorem</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">GreysIlovesdas</a></li>
-							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
-							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
-							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
-							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
-							<li class="ocultarEnMovil"><a href="#">lorem</a></li>
-							<li class="menu-button" id="botonMostrar">
-								<a href="#">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										height="26"
-										viewBox="0 96 960 960"
-										width="26"
-										color="white"
-									>
-										<path
-											d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-										/>
-									</svg>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</header>
-				<!-- ***main con cards*** -->
+		<header>
+			<nav>
+				<ul class="barra-lateral">
+					<li id="botonOcultar">
+						<a href="#">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								height="26"
+								viewBox="0 96 960 960"
+								width="26"
+							>
+								<path
+									d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+								/>
+							</svg>
+						</a>
+					</li>
+					<li><a href="#">lorem</a></li>
+					<li><a href="#">lorem</a></li>
+					<li><a href="#">lorem</a></li>
+					<li><a href="#">lorem</a></li>
+					<li><a href="#">lorem</a></li>
+				</ul>
+				<ul>
+					<li><a href="#">GreysIlovesdas</a></li>
+					<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+					<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+					<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+					<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+					<li class="ocultarEnMovil"><a href="#">lorem</a></li>
+					<li class="menu-button" id="botonMostrar">
+						<a href="#">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								height="26"
+								viewBox="0 96 960 960"
+								width="26"
+								color="white"
+							>
+								<path
+									d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+								/>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- ***main con cards*** -->
 
-				<div class="spinner_container hidden">
-					<img src="svg-spinners--180-ring.svg" alt="Loading" />
-				</div>
-				<main>
-					<div id="main-container">
-						<form id="filtros">
-							<select name="comision" id="comision">
-								<option value="">comision...</option>
-								<option value="19">19va comision</option>
-								<option value="20">20va comision</option>
-								<option value="21">21va comision</option>
-								<option value="22">22va comision</option>
-							</select>
-							<select name="modalidad" id="modalidad">
-								<option value="">modalidad...</option>
-								<option value="sincronico">Sincrónica</option>
-								<option value="asincronica">Asincrónica</option>
-							</select>
-							<select name="lenguajeFavorito" id="lenguajeFavorito">
-								<option value="">lenguaje favorito...</option>
-								<option value="python">Python</option>
-								<option value="JS">JS</option>
-								<option value="PHP">PHP</option>
-							</select>
-						</form>
-						<!-- <div class="card">
+		<main>
+			<div class="spinner_container hidden">
+				<img src="svg-spinners--180-ring.svg" alt="Loading" />
+			</div>
+			<div id="main-container">
+				<form id="filtros">
+					<select name="comision" id="comision">
+						<option value="">comision...</option>
+						<option value="19">19va comision</option>
+						<option value="20">20va comision</option>
+						<option value="21">21va comision</option>
+						<option value="22">22va comision</option>
+					</select>
+					<select name="modalidad" id="modalidad">
+						<option value="">modalidad...</option>
+						<option value="sincronico">Sincrónica</option>
+						<option value="asincronica">Asincrónica</option>
+					</select>
+					<select name="lenguajeFavorito" id="lenguajeFavorito">
+						<option value="">lenguaje favorito...</option>
+						<option value="python">Python</option>
+						<option value="JS">JS</option>
+						<option value="PHP">PHP</option>
+					</select>
+				</form>
+				<!-- <div class="card">
 							<img class="card-img" src="" alt="" />
 							<div class="card-body">
 								<h1 class="card-title">Meredith Grey</h1>
@@ -101,9 +92,9 @@
 								<button class="card-btn">mas detalles</button>
 							</div>
 						</div> -->
-					</div>
-				</main>
-				<!-- <div class="modal-info" id="modal"></div>
+			</div>
+		</main>
+		<!-- <div class="modal-info" id="modal"></div>
 				<div class="card-modal">
 					<img class="movie-img" src="" alt="Imagen de personajes" />
 					<div class="text-movie-cont">
@@ -120,78 +111,138 @@
 						</div>
 					</div>
 				</div> -->
+		<div class="container-form-editar">
+			<div class="custom-container-editar">
+				<!-- Aquí se agrega el botón "X" -->
 
-				<!-- <div class="container-form-agregar">
-					<div class="custom-container">
-						<form class="custom-form" action="" method="post">
-							<h3>Agregar tu personaje</h3>
-							<h4>Recuerda...</h4>
-							<fieldset>
-								<label for="nombre">Nombre de personaje</label>
-								<input
-									type="text"
-									placeholder="Ej. Meredith Grey"
-									tabindex="1"
-									required
-									autofocus
-								/>
-							</fieldset>
-							<fieldset>
-								<label for="especialidad">Especialidad</label>
-								<input
-									type="text"
-									placeholder="Ej. Cirugía general"
-									tabindex="2"
-									required
-								/>
-							</fieldset>
-							<fieldset>
-								<label for="temporadas">Temporadas en las que aparece</label>
-								<input
-									type="number"
-									placeholder="Ej. 20"
-									tabindex="3"
-									required
-								/>
-							</fieldset>
-							<fieldset>
-								<label for="estado">Estado</label>
-								<input
-									type="text"
-									placeholder="Ej. Vivo"
-									tabindex="4"
-									required
-								/>
-							</fieldset>
-							<fieldset>
-								<label for="imagen">Imagen</label>
-								<input
-									type="url"
-									placeholder="Ej. https://ejemplo.jpg"
-									tabindex="5"
-									required
-								/>
-							</fieldset>
-							<fieldset>
-								<label for="descripcion">Descripción</label>
-								<textarea
-									placeholder="Ej. Meredith es la protagonista principal de la serie..."
-									tabindex="6"
-									required
-								></textarea>
-							</fieldset>
-							<fieldset>
-								<button type="submit" name="submit" data-submit="...Sending">
-									Agregar personaje
-								</button>
-							</fieldset>
-						</form>
-					</div>
-				</div> -->
+				<form class="custom-form-editar" action="" method="post">
+					<button class="close-btn" type="button">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="feather feather-x"
+						>
+							<line x1="18" y1="6" x2="6" y2="18"></line>
+							<line x1="6" y1="6" x2="18" y2="18"></line>
+						</svg>
+					</button>
+					<h3>Edita tu personaje</h3>
+					<h4>Recuerda...</h4>
+					<fieldset>
+						<label for="nombre">Nombre de personaje</label>
+						<input
+							type="text"
+							placeholder="Ej. Meredith Grey"
+							tabindex="1"
+							required
+							autofocus
+						/>
+						<label for="especialidad">Especialidad</label>
+						<input
+							type="text"
+							placeholder="Ej. Cirugía general"
+							tabindex="2"
+							required
+						/>
 
-				<script src="dom.js"></script>
-				<script src="main.js"></script>
-			</body>
-		</html>
+						<label for="temporadas">Temporadas en las que aparece</label>
+						<input type="number" placeholder="Ej. 20" tabindex="3" required />
+
+						<label for="estado">Estado</label>
+						<input type="text" placeholder="Ej. Vivo" tabindex="4" required />
+
+						<label for="imagen">Imagen</label>
+						<input
+							type="url"
+							placeholder="Ej. https://ejemplo.jpg"
+							tabindex="5"
+							required
+						/>
+					</fieldset>
+					<fieldset>
+						<label for="descripcion">Descripción</label>
+						<textarea
+							placeholder="Ej. Meredith es la protagonista principal de la serie..."
+							tabindex="6"
+							required
+						></textarea>
+
+						<button
+							type="submit"
+							name="submit"
+							data-submit="...Sending"
+							class="btn-editar-modal"
+						>
+							Editar personaje
+						</button>
+					</fieldset>
+				</form>
+			</div>
+
+			<div class="container-form-agregar">
+				<div class="custom-container">
+					<form class="custom-form" action="" method="post">
+						<h3>Agregar tu personaje</h3>
+						<h4>Recuerda...</h4>
+						<fieldset>
+							<label for="nombre">Nombre de personaje</label>
+							<input
+								type="text"
+								placeholder="Ej. Meredith Grey"
+								tabindex="1"
+								required
+								autofocus
+							/>
+							<label for="especialidad">Especialidad</label>
+							<input
+								type="text"
+								placeholder="Ej. Cirugía general"
+								tabindex="2"
+								required
+							/>
+
+							<label for="temporadas">Temporadas en las que aparece</label>
+							<input type="number" placeholder="Ej. 20" tabindex="3" required />
+
+							<label for="estado">Estado</label>
+							<input type="text" placeholder="Ej. Vivo" tabindex="4" required />
+
+							<label for="imagen">Imagen</label>
+							<input
+								type="url"
+								placeholder="Ej. https://ejemplo.jpg"
+								tabindex="5"
+								required
+							/>
+						</fieldset>
+						<fieldset>
+							<label for="descripcion">Descripción</label>
+							<textarea
+								placeholder="Ej. Meredith es la protagonista principal de la serie..."
+								tabindex="6"
+								required
+							></textarea>
+
+							<button
+								type="submit"
+								name="submit"
+								data-submit="...Sending"
+								class="btn-agregar-modal"
+							>
+								Agregar personaje
+							</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="dom.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>

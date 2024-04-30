@@ -22,7 +22,7 @@ const renderPersonajes = (personajes) => {
 			personajes.forEach((personaje) => {
 				const { imagen, id, nombre, especialidad } = personaje;
 
-				container.innerHTML += `
+				container.innerHTML += `  
                 <div class="card">
 							<img
 								class="card-img"
@@ -35,7 +35,12 @@ const renderPersonajes = (personajes) => {
 
                             <button class="card-detalle-btn" data-cardid="${id}">Ver detalles</button>
 							</div>
-						</div> `;
+						</div> 
+                        
+                     
+                        
+                        
+                        `;
 			});
 
 			asignarEventosVerDetalle(document.querySelectorAll(".card-detalle-btn"));
@@ -110,5 +115,5 @@ const mostrarDetalleAlummna = (personaje) => {
                 </div>
                 </div>
             </div>  `;
-	});
+	}, 2000);
 };
