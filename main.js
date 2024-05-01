@@ -1,5 +1,6 @@
 const container = document.getElementById("main-container");
 const spinner = document.querySelector(".spinner_container");
+const btnnuevoPersonaje = document.getElementById("btn-nuevo-personaje");
 
 const baseUrl = "https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes";
 
@@ -309,3 +310,135 @@ const mostrarDetalleAlummna = (personaje) => {
 			});
 	}, 2000);
 };
+
+console.log(btnnuevoPersonaje);
+
+btnnuevoPersonaje.addEventListener("click", () => {
+	container.innerHTML = `
+    <div class="container-form-agregar" class="hidden">
+				<div class="custom-container">
+					<form class="custom-form" id="nuevo-personaje-form" method="post">
+						<h3>Agregar tu personaje</h3>
+						<h4>Recuerda...</h4>
+						<fieldset>
+							<label for="nombre">Nombre de personaje</label>
+							<input
+								type="text"
+								placeholder="Ej. Meredith Grey"
+								tabindex="1"
+								required
+								autofocus
+                                id="nuevo-nombre-input"
+							/>
+							<label for="especialidad">Especialidad</label>
+							<input
+								type="text"
+								placeholder="Ej. Cirugía general"
+								tabindex="2"
+								required
+                                id="nuevo-especialidad-input"
+							/>
+
+							<label for="temporadas">Temporadas en las que aparece</label>
+							<input type="number" placeholder="Ej. 20" tabindex="3" required id="nuevo-temporadas-input"/>
+
+							<label for="estado">Estado</label>
+							<input type="text" placeholder="Ej. Vivo" tabindex="4" required id="nuevo-estado-input"/>
+
+							<label for="imagen">Imagen</label>
+							<input
+								type="url"
+								placeholder="Ej. https://ejemplo.jpg"
+								tabindex="5"
+								required
+                                id="nuevo-imagen-input"
+							/>
+						</fieldset>
+						<fieldset>
+							<label for="descripcion">Descripción</label>
+							<textarea
+								placeholder="Ej. Meredith es la protagonista principal de la serie..."
+								tabindex="6"
+								required
+                                id="nuevo-descripcion-input"
+							></textarea>
+
+							<button
+								type="submit"
+								name="submit"
+								data-submit="...Sending"
+								class="btn-agregar-modal"
+                                id="crearNuevoPersonaje"
+							>
+								Agregar personaje
+							</button> 
+                             <a href="javascript:void(0);" class="go_backDos">Regresar</a>
+						</fieldset>
+					</form>
+				</div>
+			</div>`;
+
+	const formCrearNuevoPersonaje = document.getElementById(
+		"nuevo-personaje-form"
+	);
+	const nuevoPersonajeInput = document.getElementById("nuevo-nombre-input");
+	const nuevoEspecialidadInput = document.getElementById(
+		"nuevo-especialidad-input"
+	);
+	const nuevoTemporadasInput = document.getElementById(
+		"nuevo-temporadas-input"
+	);
+	const nuevoEstadoInput = document.getElementById("nuevo-estado-input");
+	const nuevoImagenInput = document.getElementById("nuevo-imagen-input");
+	const nuevoDescripcionInput = document.getElementById(
+		"nuevo-descripcion-input"
+	);
+	console.log(
+		nuevoDescripcionInput,
+		nuevoEspecialidadInput,
+		nuevoEstadoInput,
+		nuevoImagenInput,
+		nuevoPersonajeInput,
+		nuevoTemporadasInput
+	);
+
+	document
+		.querySelector(".go_backDos")
+		.addEventListener("click", () => getPersonajes(baseUrl));
+
+	formCrearNuevoPersonaje.addEventListener("submit", (e) => {
+		e.preventDefault();
+		const nuevoPersonaje = {
+			nombre: nuevoPersonajeInput.value,
+			especialidad: nuevoEspecialidadInput.value,
+			temporadas: nuevoTemporadasInput.value,
+			estado: nuevoEstadoInput.value,
+			imagen: nuevoImagenInput.value,
+			descripcion: nuevoDescripcionInput.value,
+		};
+
+		fetch(`${baseUrl}`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(nuevoPersonaje),
+		})
+			.then((res) => {
+				if (res.ok) {
+					return res.json();
+				}
+			})
+			.then((data) => {
+				if (data) {
+					formCrearNuevoPersonaje.reset();
+					getPersonajes(baseUrl);
+					console.log(data);
+				} else {
+					aler("ocurrio el siguiente error:");
+				}
+			})
+
+			.catch((err) => aler(err));
+	});
+});
