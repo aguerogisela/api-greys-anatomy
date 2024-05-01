@@ -35,12 +35,7 @@ const renderPersonajes = (personajes) => {
 
                             <button class="card-detalle-btn" data-cardid="${id}">Ver detalles</button>
 							</div>
-						</div> 
-                        
-                     
-                        
-                        
-                        `;
+						</div>`;
 			});
 
 			asignarEventosVerDetalle(document.querySelectorAll(".card-detalle-btn"));
@@ -119,7 +114,7 @@ const mostrarDetalleAlummna = (personaje) => {
                 <p class="movie-description">${descripcion}</p>
                 <div class="card-buttons">
                 <button class="edit-button" data-cardId="${id}">Editar</button>
-                <button class="delete-button">Eliminar</button>
+                <button class="delete-button" >Eliminar</button>
                 </div>
                                          <a href="javascript:void(0);" class="go_back">Regresar</a>
 
@@ -213,23 +208,30 @@ const mostrarDetalleAlummna = (personaje) => {
 				</form>
 			</div>			</div>
 
-		</div>`;
+		</div>
+        
+        <div id="modal-eliminar" class="hidden">
+    <p>estas seguro que deseas borrar la informacio</p>
+        <button id="confirmar-eliminar" data-cardId="${id}">Eliminar Personaje</button><button id="cancelar-eliminar">Cancelar</button>
+         </div>`;
+
+		// funcion regresar
 		document
 			.querySelector(".go_back")
 			.addEventListener("click", () => getPersonajes(baseUrl));
-		document
-			.querySelector(".edit-button")
-			.addEventListener("click", () => mostrarFormEditarPersonaje(personaje));
 
 		const editarPersonajeForm = document.getElementById("custom-form-editar");
 		//mostrar form editar personaje
-
+		document
+			.querySelector(".edit-button")
+			.addEventListener("click", () => mostrarFormEditarPersonaje(personaje));
 		const personajeInput = document.getElementById("personaje-input");
 		const especialidadInput = document.getElementById("especialidad-input");
 		const temporadasInput = document.getElementById("temporadas-input");
 		const estadoInput = document.getElementById("estado-input");
 		const imagenInput = document.getElementById("imagen-input");
 		const descripcionInput = document.getElementById("descripcion-input");
+
 		const mostrarFormEditarPersonaje = (personaje) => {
 			personajeInput.value = personaje.nombre;
 			especialidadInput.value = personaje.especialidad;
@@ -240,6 +242,7 @@ const mostrarDetalleAlummna = (personaje) => {
 
 			editarPersonajeForm.classList.remove("hidden");
 		};
+		//confirmar editar personaje
 
 		const confirmarEditarPersonaje = (personaje) => {
 			const personajeEdit = {
@@ -266,14 +269,43 @@ const mostrarDetalleAlummna = (personaje) => {
 				})
 				.catch((err) => console.log(err));
 		};
+		//asignar funcion editar a botones
 
 		editarPersonajeForm.addEventListener("submit", (e) => {
 			e.preventDefault();
 			confirmarEditarPersonaje(personaje);
 		});
+
+		//mostrar modal eliminar alumna
+
+		const btnEliminarAlumna = document.querySelector(".delete-button");
+		const modalEliminarAlumna = document.getElementById("modal-eliminar");
+		btnEliminarAlumna.addEventListener("click", () => {
+			modalEliminarAlumna.classList.remove("hidden");
+		});
+
+		//cancelar eliminar alumna
+		document
+			.getElementById("cancelar-eliminar")
+			.addEventListener("click", () =>
+				modalEliminarAlumna.classList.add("hidden")
+			);
+
+		//continuar eliminar
+		document
+			.getElementById("confirmar-eliminar")
+			.addEventListener("click", (e) => {
+				fetch(`${baseUrl}/${e.currentTarget.dataset.cardid}`, {
+					method: "DELETE",
+				}).then((res) =>
+					res
+						.json()
+						.then((data) => {
+							getPersonajes(baseUrl);
+							// console.log(data);
+						})
+						.catch((err) => console.log(err))
+				);
+			});
 	}, 2000);
 };
-
-//confirmar editar personaje
-
-//asignar funcion editar a botones
