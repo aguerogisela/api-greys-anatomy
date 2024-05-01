@@ -111,10 +111,10 @@
 						</div>
 					</div>
 				</div> -->
-		<div class="container-form-editar">
-			<div class="custom-container-editar">
-				<!-- Aquí se agrega el botón "X" -->
-
+		<!-- <div class="container-form-editar">
+			<div class="custom-container-editar"> -->
+		<!-- Aquí se agrega el botón "X" -->
+		<!-- 
 				<form class="custom-form-editar" action="" method="post">
 					<button class="close-btn" type="button">
 						<svg
@@ -141,6 +141,7 @@
 							tabindex="1"
 							required
 							autofocus
+							id="personaje-input"
 						/>
 						<label for="especialidad">Especialidad</label>
 						<input
@@ -148,13 +149,26 @@
 							placeholder="Ej. Cirugía general"
 							tabindex="2"
 							required
+							id="especialidad-input"
 						/>
 
 						<label for="temporadas">Temporadas en las que aparece</label>
-						<input type="number" placeholder="Ej. 20" tabindex="3" required />
+						<input
+							type="number"
+							placeholder="Ej. 20"
+							tabindex="3"
+							required
+							id="temporadas-input"
+						/>
 
 						<label for="estado">Estado</label>
-						<input type="text" placeholder="Ej. Vivo" tabindex="4" required />
+						<input
+							type="text"
+							placeholder="Ej. Vivo"
+							tabindex="4"
+							required
+							id="estado-input"
+						/>
 
 						<label for="imagen">Imagen</label>
 						<input
@@ -162,6 +176,7 @@
 							placeholder="Ej. https://ejemplo.jpg"
 							tabindex="5"
 							required
+							id="imagen-input"
 						/>
 					</fieldset>
 					<fieldset>
@@ -170,8 +185,9 @@
 							placeholder="Ej. Meredith es la protagonista principal de la serie..."
 							tabindex="6"
 							required
+							id="descripcion-input"
 						></textarea>
-
+						<input type="submit" name="" id="Editar" />
 						<button
 							type="submit"
 							name="submit"
@@ -181,10 +197,11 @@
 							Editar personaje
 						</button>
 					</fieldset>
-				</form>
-			</div>
+				</form> -->
+		<!-- </div>
+		</div> -->
 
-			<div class="container-form-agregar">
+		<!-- <div class="container-form-agregar">
 				<div class="custom-container">
 					<form class="custom-form" action="" method="post">
 						<h3>Agregar tu personaje</h3>
@@ -239,8 +256,7 @@
 						</fieldset>
 					</form>
 				</div>
-			</div>
-		</div>
+			</div> -->
 
 		<script src="dom.js"></script>
 		<script src="main.js"></script>
