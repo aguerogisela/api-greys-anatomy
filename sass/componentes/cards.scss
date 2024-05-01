@@ -78,13 +78,7 @@ h1 {
 }
 
 .card-modal {
-	display: none;
-	z-index: 1000;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 90%;
+	width: 100%;
 	max-width: 600px; /* Ancho máximo de la modal */
 	background-color: #1e1b26;
 	box-shadow: 5px 5px 115px -14px black;

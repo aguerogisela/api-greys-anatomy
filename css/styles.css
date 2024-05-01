@@ -121,10 +121,12 @@ main {
 }
 
 #main-container {
-	padding: 20px;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
+	padding-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
 }
 
 @media screen and (max-width: 780px) {
@@ -133,7 +135,17 @@ main {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+	.container-modal {
+		width: 80%;
+	}
 }
+.container-modal {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	align-items: center;
+}
+
 #filtros {
 	margin-bottom: 20px;
 	display: flex;
@@ -155,16 +167,8 @@ select {
 	box-sizing: border-box;
 }
 
-.container-form-agregar,
-.container-form-editar {
-	width: 90%;
-	margin: 50px auto;
-	display: flex;
-	justify-content: center;
-}
-
 .custom-form,
-.custom-form-editar {
+#custom-form-editar {
 	padding: 25px;
 	background: #ffffff;
 	border-radius: 10px;
@@ -175,7 +179,7 @@ select {
 }
 
 .custom-form,
-.custom-form-editar,
+#custom-form-editar,
 h3 {
 	font-size: 28px;
 	color: #123c61;
@@ -183,7 +187,7 @@ h3 {
 }
 
 .custom-form,
-.custom-form-editar,
+#custom-form-editar,
 h4 {
 	font-weight: 600;
 	font-size: 16px;
@@ -319,13 +323,7 @@ h1 {
 }
 
 .card-modal {
-	display: none;
-	z-index: 1000;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 90%;
+	width: 100%;
 	max-width: 600px; /* Ancho máximo de la modal */
 	background-color: #1e1b26;
 	box-shadow: 5px 5px 115px -14px black;
@@ -473,6 +471,12 @@ h1 {
 	padding: 15px;
 	font-size: 15px;
 	font-weight: 600;
+}
+
+.go_back {
+	justify-content: center;
+	display: flex;
+	font-size: 10px;
 }
 
 .spinner_container {

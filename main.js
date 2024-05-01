@@ -93,27 +93,36 @@ const mostrarDetalleAlummna = (personaje) => {
 		hideSpinner();
 		container.innerHTML = "";
 
-		const { nombre, descripcion, imagen, temporadas, especialidad, vivo, id } =
-			personaje;
+		const {
+			nombre,
+			descripcion,
+			imagen,
+			temporadas,
+			especialidad,
+			estado,
+			id,
+		} = personaje;
 
 		container.innerHTML = `
 
+            <div class="container-modal">
 
             <div class="card-modal">
-                    <a href="javascript:void(o)" class="go_back">Regresar</a>
                 <img class="movie-img" src="${imagen}" alt="Imagen de personajes" />
                 <div class="text-movie-cont">
-                <h1>${nombre}r</h1>
+                <h1>${nombre}</h1>
                 <ul class="movie-gen">
                     <li>${especialidad}</li>
                     <li>${temporadas}</li>
-                    <li>${vivo}</li>
+                    <li>${estado}</li>
                 </ul>
                 <p class="movie-description">${descripcion}</p>
                 <div class="card-buttons">
                 <button class="edit-button" data-cardId="${id}">Editar</button>
                 <button class="delete-button">Eliminar</button>
                 </div>
+                                         <a href="javascript:void(0);" class="go_back">Regresar</a>
+
                 </div>
 
             </div>  <div class="container-form-editar">
@@ -192,7 +201,6 @@ const mostrarDetalleAlummna = (personaje) => {
 							required
 							id="descripcion-input"
 						></textarea>
-						<input type="submit" name="" id="Editar" />
 						<button
 							type="submit"
 							name="submit"
@@ -203,15 +211,69 @@ const mostrarDetalleAlummna = (personaje) => {
 						</button>
 					</fieldset>
 				</form>
-			</div>
+			</div>			</div>
+
 		</div>`;
 		document
 			.querySelector(".go_back")
 			.addEventListener("click", () => getPersonajes(baseUrl));
-		//
+		document
+			.querySelector(".edit-button")
+			.addEventListener("click", () => mostrarFormEditarPersonaje(personaje));
+
+		const editarPersonajeForm = document.getElementById("custom-form-editar");
+		//mostrar form editar personaje
+
+		const personajeInput = document.getElementById("personaje-input");
+		const especialidadInput = document.getElementById("especialidad-input");
+		const temporadasInput = document.getElementById("temporadas-input");
+		const estadoInput = document.getElementById("estado-input");
+		const imagenInput = document.getElementById("imagen-input");
+		const descripcionInput = document.getElementById("descripcion-input");
+		const mostrarFormEditarPersonaje = (personaje) => {
+			personajeInput.value = personaje.nombre;
+			especialidadInput.value = personaje.especialidad;
+			temporadasInput.value = personaje.temporadas;
+			estadoInput.value = personaje.estado;
+			imagenInput.value = personaje.imagen;
+			descripcionInput.value = personaje.descripcion;
+
+			editarPersonajeForm.classList.remove("hidden");
+		};
+
+		const confirmarEditarPersonaje = (personaje) => {
+			const personajeEdit = {
+				...personaje,
+				nombre: personajeInput.value,
+				especialidad: especialidadInput.value,
+				temporadas: temporadasInput.value,
+				estado: estadoInput.value,
+				imagen: imagenInput.value,
+				descripcion: descripcionInput.value,
+			};
+			//console.log(personajeEdit);
+			fetch(`${baseUrl}/${id}`, {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(personajeEdit),
+			})
+				.then((res) => {
+					if (res.ok) {
+						getDetallePersonaje(id);
+					}
+				})
+				.catch((err) => console.log(err));
+		};
+
+		editarPersonajeForm.addEventListener("submit", (e) => {
+			e.preventDefault();
+			confirmarEditarPersonaje(personaje);
+		});
 	}, 2000);
 };
 
 //confirmar editar personaje
-const confirmarEditarPersonaje = () => {};
+
 //asignar funcion editar a botones

@@ -6,10 +6,16 @@ main {
 }
 
 #main-container {
-	padding: 20px;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	// padding: 20px;
+	// display: grid;
+	// grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
+	padding-top: 30px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
 }
 
 @media screen and (max-width: 780px) {
@@ -18,4 +24,13 @@ main {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+	.container-modal {
+		width: 80%;
+	}
+}
+.container-modal {
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	align-items: center;
 }
