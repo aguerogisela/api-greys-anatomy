@@ -24,27 +24,37 @@
 			<div class="spinner_container hidden">
 				<img src="svg-spinners--180-ring.svg" alt="Loading" />
 			</div>
+			<form id="filtros">
+				<select name="especialidad-select" id="especialidad-select">
+					<option value="">Especialidad</option>
+					<option value="Cirugía pediátrica">Cirugía pediátrica</option>
+					<option value="Cirugía plástica">Cirugía plástica</option>
+					<option value="Cirugía general">Cirugía general</option>
+					<option value="Cirugia Ortopedica">Cirugia Ortopedica</option>
+					<option value="Neuro">Neuro</option>
+					<option value="Cardio">Cardio</option>
+
+					<option value="Obstetricia">Obstetricia</option>
+					<option value="Trauma">Trauma</option>
+				</select>
+				<!-- <select id="filtro">
+					<option value="mas">Más de 10 temporadas</option>
+					<option value="menos">Menos de 10 temporadas</option>
+				</select> -->
+				<select id="temporadas-select">
+					<option value="">Todas las temporadas</option>
+					<option value="5">Menos de 5 temporadas</option>
+					<option value="5-10">Entre 5 y 10 temporadas</option>
+					<option value="10">Más de 10 temporadas</option>
+				</select>
+				<select name="estado-select" id="estado-select">
+					<option value="">Estado.</option>
+					<option value="Vivo">Vivo</option>
+					<option value="Fallecido">Fallecido</option>
+				</select>
+			</form>
 			<div id="main-container">
-				<!-- <form id="filtros">
-					<select name="comision" id="comision">
-						<option value="">comision...</option>
-						<option value="19">19va comision</option>
-						<option value="20">20va comision</option>
-						<option value="21">21va comision</option>
-						<option value="22">22va comision</option>
-					</select>
-					<select name="modalidad" id="modalidad">
-						<option value="">modalidad...</option>
-						<option value="sincronico">Sincrónica</option>
-						<option value="asincronica">Asincrónica</option>
-					</select>
-					<select name="lenguajeFavorito" id="lenguajeFavorito">
-						<option value="">lenguaje favorito...</option>
-						<option value="python">Python</option>
-						<option value="JS">JS</option>
-						<option value="PHP">PHP</option>
-					</select>
-				</form> -->
+				<!--  -->
 				<!-- <div class="card">
 							<img class="card-img" src="" alt="" />
 							<div class="card-body">

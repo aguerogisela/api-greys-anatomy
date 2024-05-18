@@ -19,11 +19,13 @@ const renderPersonajes = (personajes) => {
 	setTimeout(() => {
 		hideSpinner();
 		container.innerHTML = "";
+
 		if (personajes && personajes.length > 0) {
 			personajes.forEach((personaje) => {
 				const { imagen, id, nombre, especialidad } = personaje;
 
-				container.innerHTML += `  
+				container.innerHTML += `
+
                 <div class="card">
 							<img
 								class="card-img"
@@ -442,3 +444,72 @@ btnnuevoPersonaje.addEventListener("click", () => {
 			.catch((err) => aler(err));
 	});
 });
+//filtrar
+// https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes?especialidad=&estado=&temporadas=
+
+// let especialidad = "";
+// let estado = "";
+// let temporadas = "";
+// const filtrarPersonajes = (especialidad = "", estado = "", temporadas = "") => {
+//  const urlFiltro = `https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes?especialidad=${especialidad}&estado=${estado}&temporadas=${temporadas}`;
+
+//  getPersonajes(urlFiltro);
+// };
+
+// const urlObject = new URLSearchParams(baseUrl.search);
+// document
+//  .getElementById("especialidad-select")
+//  .addEventListener("change", (e) => {
+//      especialidad = e.target.value;
+//      urlObject.set("especialidad", e.target.value);
+//      console.log(urlObject);
+//      console.log(`${baseUrl}/?${urlObject}`);
+//      getPersonajes(`${baseUrl}/?${urlObject}`);
+//  });
+
+// document.getElementById("temporadas-select").addEventListener("change", (e) => {
+//  const temporadasFilter = e.target.value;
+//  const url = temporadasFilter
+//      ? `${baseUrl}?temporadas=${temporadasFilter}`
+//      : baseUrl;
+//  getPersonajes(url);
+// });
+
+// document.getElementById("estado-select").addEventListener("change", (e) => {
+//  estado = e.target.value;
+//  urlObject.set("estado", e.target.value);
+
+//  getPersonajes(`${baseUrl}/?${urlObject}`);
+// });
+
+const urlObject = new URLSearchParams(baseUrl.search);
+document
+	.getElementById("especialidad-select")
+	.addEventListener("change", (e) => {
+		const especialidad = e.target.value;
+		urlObject.set("especialidad", especialidad);
+		getPersonajes(`${baseUrl}/?${urlObject}`);
+	});
+
+document.getElementById("temporadas-select").addEventListener("change", (e) => {
+	const temporadasFilter = e.target.value;
+	const url = temporadasFilter
+		? `${baseUrl}?temporadas=${temporadasFilter}`
+		: baseUrl;
+	getPersonajes(url);
+});
+
+document.getElementById("estado-select").addEventListener("change", (e) => {
+	const estado = e.target.value;
+	urlObject.set("estado", estado);
+	getPersonajes(`${baseUrl}/?${urlObject}`);
+});
+// if (temporadasFilter) {
+//  if (temporadasFilter === "5-10") {
+//      url += "?temporadas=>5&temporadas=<10";
+//  } else if (temporadasFilter === "5") {
+//      url += "?temporadas=<5";
+//  } else if (temporadasFilter === "10") {
+//      url += "?temporadas=>10";
+//  }
+// }
