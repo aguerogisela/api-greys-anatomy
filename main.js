@@ -213,11 +213,27 @@ const mostrarDetalleAlummna = (personaje) => {
 
 		</div>
         
-        <div id="modal-eliminar" class="hidden">
-    <p>estas seguro que deseas borrar la informacio</p>
-        <button id="confirmar-eliminar" data-cardId="${id}">Eliminar Personaje</button><button id="cancelar-eliminar">Cancelar</button>
-         </div>`;
+   	<div id="modal-eliminar" class="hidden">
+			<div class="content-modal">
+				<h2 class="pregunta-modal">Eliminar personaje</h2>
+				<p>¿Estás seguro que deseas borrar este personaje?</p>
+				<div class="btn-cerrar">
+					<button id="confirmar-eliminar" data-cardId="${id}">
+						Eliminar Personaje
+					</button>
+					<button id="cancelar-eliminar">Cancelar</button>
+				</div>
+			</div>
+		</div>`;
 
+		// Ocultar el formulario de filtros
+		const filtros = document.getElementById("filtros");
+		if (filtros) {
+			console.log("Formulario de filtros encontrado. Ocultando...");
+			filtros.classList.add("hidden");
+		} else {
+			console.log("Formulario de filtros no encontrado.");
+		}
 		// funcion regresar
 		document
 			.querySelector(".go_back")
