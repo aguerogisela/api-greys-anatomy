@@ -1,10 +1,18 @@
 @import "base/reset.scss";
+//****
+@import "themes/variables.scss";
+@import "themes/mixins.scss";
+
 // ***********
 @import "layout/header.scss"; // Importa el archivo _header.scss
+@import "layout/footer.scss";
+
 @import "layout/main.scss";
+
 @import "layout/forms.scss";
 
 // ****componentes******
 @import "componentes/cards.scss";
 @import "componentes/buttons.scss";
 @import "componentes/spinner.scss";
+@import "componentes/select.scss";

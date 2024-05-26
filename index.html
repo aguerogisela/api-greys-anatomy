@@ -4,14 +4,26 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="../images/favicon.png" />
+		<script
+			src="https://kit.fontawesome.com/96cdc70ae5.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/imagenes/Sin título-1.ico"
+		/>
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Document</title>
+		<title>Api Grey's Anatomy</title>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<div class="logo">
-					<h2>GraysAnatomyIlove</h2>
+					<h2>ApiGrays</h2>
 				</div>
 			</nav>
 			<div class="boton-nuevo-personaje">
@@ -21,30 +33,54 @@
 		<!-- ***main con cards*** -->
 
 		<main>
+			<form id="filtros" class="hidden">
+				<select name="especialidad-select" id="especialidad-select">
+					<option value="">Especialidad</option>
+					<option value="Cirugía pediátrica">Cirugía pediátrica</option>
+					<option value="Cirugía plástica">Cirugía plástica</option>
+					<option value="Cirugía general">Cirugía general</option>
+					<option value="Cirugia Ortopedica">Cirugia Ortopedica</option>
+					<option value="Neuro">Neuro</option>
+					<option value="Cardio">Cardio</option>
+
+					<option value="Obstetricia">Obstetricia</option>
+					<option value="Trauma">Trauma</option>
+				</select>
+
+				<select id="temporadas-select">
+					<option value="">Todas las temporadas</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select>
+				<select name="estado-select" id="estado-select">
+					<option value="">Estado.</option>
+					<option value="Vivo">Vivo</option>
+					<option value="Fallecido">Fallecido</option>
+				</select>
+				<button id="clear" type="button">Clear</button>
+			</form>
 			<div class="spinner_container hidden">
-				<img src="svg-spinners--180-ring.svg" alt="Loading" />
+				<img src="imagenes/9lfK-unscreen.gif" alt="Loading" />
 			</div>
 			<div id="main-container">
-				<!-- <form id="filtros">
-					<select name="comision" id="comision">
-						<option value="">comision...</option>
-						<option value="19">19va comision</option>
-						<option value="20">20va comision</option>
-						<option value="21">21va comision</option>
-						<option value="22">22va comision</option>
-					</select>
-					<select name="modalidad" id="modalidad">
-						<option value="">modalidad...</option>
-						<option value="sincronico">Sincrónica</option>
-						<option value="asincronica">Asincrónica</option>
-					</select>
-					<select name="lenguajeFavorito" id="lenguajeFavorito">
-						<option value="">lenguaje favorito...</option>
-						<option value="python">Python</option>
-						<option value="JS">JS</option>
-						<option value="PHP">PHP</option>
-					</select>
-				</form> -->
+				<!--  -->
 				<!-- <div class="card">
 							<img class="card-img" src="" alt="" />
 							<div class="card-body">
@@ -56,6 +92,37 @@
 						</div> -->
 			</div>
 		</main>
+		<footer class="div5">
+			<nav class="ultimos-iconos">
+				<a href="https://github.com/aguerogisela" class="red-githubdos">
+					<span><i class="fa-brands fa-github-alt"></i></span>
+				</a>
+
+				<a
+					href="https://www.linkedin.com/in/gisela-belen-ag%C3%BCero-barriga-8b0351209/"
+					class="red-githubdos"
+				>
+					<span><i class="fa-brands fa-linkedin"></i></span>
+				</a>
+				<a href="https://www.behance.net/giselaagero1" class="red-githubdos">
+					<span><i class="fa-brands fa-behance"></i></span>
+
+					<!-- --------------------PONER OTRA OPCION DE CONTACTO----------------- -->
+				</a>
+				<a
+					href="mailto:aguerobel03@gmail.com?Subject=Hola%20Belen%20vi%20tu%20portfolio"
+					class="red-githubdos"
+				>
+					<span><i class="fa-regular fa-envelope"></i></span>
+				</a>
+			</nav>
+
+			<!------ ------------------------- COMIENZO DE FOOTER ----------------------->
+			<!-- Aqui van de nuevo los links del header -->
+			<div class="saludo-final">
+				<p>Hecho con amor 🩷 por Gisela</p>
+			</div>
+		</footer>
 		<div class="container-card-form">
 			<!-- <div class="modal-info" id="modal"></div>
 				<div class="card-modal">
@@ -162,64 +229,15 @@
 					</fieldset>
 				</form> -->
 		</div>
+
 		<!-- </div>  -->
 
 		<!-- <div class="container-form-agregar">
 				<div class="custom-container">
 					<form class="custom-form" action="" method="post">
 						<h3>Agregar tu personaje</h3>
-						<h4>Recuerda...</h4>
-						<fieldset>
-							<label for="nombre">Nombre de personaje</label>
-							<input
-								type="text"
-								placeholder="Ej. Meredith Grey"
-								tabindex="1"
-								required
-								autofocus
-							/>
-							<label for="especialidad">Especialidad</label>
-							<input
-								type="text"
-								placeholder="Ej. Cirugía general"
-								tabindex="2"
-								required
-							/>
-
-							<label for="temporadas">Temporadas en las que aparece</label>
-							<input type="number" placeholder="Ej. 20" tabindex="3" required />
-
-							<label for="estado">Estado</label>
-							<input type="text" placeholder="Ej. Vivo" tabindex="4" required />
-
-							<label for="imagen">Imagen</label>
-							<input
-								type="url"
-								placeholder="Ej. https://ejemplo.jpg"
-								tabindex="5"
-								required
-							/>
-						</fieldset>
-						<fieldset>
-							<label for="descripcion">Descripción</label>
-							<textarea
-								placeholder="Ej. Meredith es la protagonista principal de la serie..."
-								tabindex="6"
-								required
-							></textarea>
-
-							<button
-								type="submit"
-								name="submit"
-								data-submit="...Sending"
-								class="btn-agregar-modal"
-							>
-								Agregar personaje
-							</button>
-						</fieldset>
-					</form>
-				</div>
-			</div> -->
+						<h4>Recuerda...</h4> -->
+		<!-- +++++ -->
 
 		<script src="dom.js"></script>
 		<script src="main.js"></script>

@@ -1,6 +1,7 @@
 const container = document.getElementById("main-container");
 const spinner = document.querySelector(".spinner_container");
 const btnnuevoPersonaje = document.getElementById("btn-nuevo-personaje");
+const filtrosForm = document.getElementById("filtros");
 
 const baseUrl = "https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes";
 
@@ -19,11 +20,13 @@ const renderPersonajes = (personajes) => {
 	setTimeout(() => {
 		hideSpinner();
 		container.innerHTML = "";
+
 		if (personajes && personajes.length > 0) {
 			personajes.forEach((personaje) => {
 				const { imagen, id, nombre, especialidad } = personaje;
 
-				container.innerHTML += `  
+				container.innerHTML += `
+
                 <div class="card">
 							<img
 								class="card-img"
@@ -40,6 +43,9 @@ const renderPersonajes = (personajes) => {
 			});
 
 			asignarEventosVerDetalle(document.querySelectorAll(".card-detalle-btn"));
+			if (filtrosForm) {
+				filtrosForm.style.display = "flex";
+			}
 		}
 	}, 2000);
 };
@@ -88,6 +94,11 @@ const mostrarDetalleAlummna = (personaje) => {
 	setTimeout(() => {
 		hideSpinner();
 		container.innerHTML = "";
+
+		// Ocultar el formulario de filtros si existe
+		if (filtrosForm) {
+			filtrosForm.style.display = "none";
+		}
 
 		const {
 			nombre,
@@ -211,10 +222,18 @@ const mostrarDetalleAlummna = (personaje) => {
 
 		</div>
         
-        <div id="modal-eliminar" class="hidden">
-    <p>estas seguro que deseas borrar la informacio</p>
-        <button id="confirmar-eliminar" data-cardId="${id}">Eliminar Personaje</button><button id="cancelar-eliminar">Cancelar</button>
-         </div>`;
+   	<div id="modal-eliminar" class="hidden">
+			<div class="content-modal">
+				<h2 class="pregunta-modal">Eliminar personaje</h2>
+				<p>¿Estás seguro que deseas borrar este personaje?</p>
+				<div class="btn-cerrar">
+					<button id="confirmar-eliminar" data-cardId="${id}">
+						Eliminar Personaje
+					</button>
+					<button id="cancelar-eliminar">Cancelar</button>
+				</div>
+			</div>
+		</div>`;
 
 		// funcion regresar
 		document
@@ -377,7 +396,9 @@ btnnuevoPersonaje.addEventListener("click", () => {
 					</form>
 				</div>
 			</div>`;
-
+	if (filtrosForm) {
+		filtrosForm.style.display = "none";
+	}
 	const formCrearNuevoPersonaje = document.getElementById(
 		"nuevo-personaje-form"
 	);
@@ -441,4 +462,27 @@ btnnuevoPersonaje.addEventListener("click", () => {
 
 			.catch((err) => aler(err));
 	});
+});
+
+const urlObject = new URLSearchParams(baseUrl.search);
+document
+	.getElementById("especialidad-select")
+	.addEventListener("change", (e) => {
+		const especialidad = e.target.value;
+		urlObject.set("especialidad", especialidad);
+		getPersonajes(`${baseUrl}/?${urlObject}`);
+	});
+
+document.getElementById("temporadas-select").addEventListener("change", (e) => {
+	const temporadasFilter = e.target.value;
+	const url = temporadasFilter
+		? `${baseUrl}?temporadas=${temporadasFilter}`
+		: baseUrl;
+	getPersonajes(url);
+});
+
+document.getElementById("estado-select").addEventListener("change", (e) => {
+	const estado = e.target.value;
+	urlObject.set("estado", estado);
+	getPersonajes(`${baseUrl}/?${urlObject}`);
 });

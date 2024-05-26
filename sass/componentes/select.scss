@@ -1,0 +1,46 @@
+#filtros {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding-top: 20px;
+	gap: 15px;
+	width: 60%;
+}
+
+#filtros select {
+	padding: 5px;
+	border: 1px solid $primary-color;
+	border-radius: 20px;
+	background: #edebff;
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+	padding: 7px 10px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: $primary-color;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #ffffff;
+	font-family: "Quicksand", sans-serif;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+	border: none;
+}
+
+// ***************
+#filtros select:hover {
+	border-radius: 2px solid #220e7985;
+}
+
+@media screen and (max-width: 780px) {
+	#filtros {
+		width: 100%;
+		padding-inline: 15px;
+		font-size: 14px;
+	}
+}
