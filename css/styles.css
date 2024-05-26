@@ -55,6 +55,52 @@ header {
   border: solid 2px blue; /* Verde más oscuro */
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 30px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.ultimos-iconos {
+  display: flex;
+  justify-content: center;
+}
+
+.red-githubdos {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-bottom: 15px;
+  color: black;
+}
+
+.red-githubdos span {
+  font-size: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  color: rgba(69, 37, 211, 0.5215686275);
+  margin: 10px;
+}
+
+.red-githubdos span:hover {
+  border: 1px solid white;
+  color: white;
+  background: rgba(69, 37, 211, 0.5215686275);
+}
+
+.saludo-final p {
+  font-size: 20px;
+  color: rgb(251, 251, 251);
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -442,6 +488,52 @@ h1 {
 .spinner_container img {
   display: block;
   margin: auto;
+}
+
+#filtros {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding-top: 20px;
+  gap: 15px;
+  width: 60%;
+}
+
+#filtros select {
+  padding: 5px;
+  border: 1px solid rgba(69, 37, 211, 0.5215686275);
+  border-radius: 20px;
+  background: #edebff;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 7px 10px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(69, 37, 211, 0.5215686275);
+  color: #7b7b7b;
+  font-size: 1em;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+#filtros select:hover {
+  border-radius: 2px solid rgba(34, 14, 121, 0.5215686275);
+}
+
+@media screen and (max-width: 780px) {
+  #filtros {
+    width: 100%;
+    padding-inline: 15px;
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
