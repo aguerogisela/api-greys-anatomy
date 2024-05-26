@@ -9,7 +9,7 @@
  Este proyecto es una ventana al mundo de tus personajes favoritos de la serie. Con nuestra API Web, puedes explorar información detallada de cada uno de ellos, ¡y hasta agregar nuevos personajes que te gustaría ver en la serie!
 
  
-¡Puedes visitar nuestro sitio web [aquí](https://dapper-torrone-0c5d26.netlify.app/)!
+¡Puedes visitar nuestro sitio web [aquí](https://api-greys-anatomy.netlify.app/)!
 
 ## ¿Qué Tecnologías Utilizamos? 💻🎨
 
