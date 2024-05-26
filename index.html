@@ -8,8 +8,16 @@
 			src="https://kit.fontawesome.com/96cdc70ae5.js"
 			crossorigin="anonymous"
 		></script>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/imagenes/Sin título-1.ico"
+		/>
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Document</title>
+		<title>Api Grey's Anatomy</title>
 	</head>
 	<body>
 		<header>
@@ -25,7 +33,7 @@
 		<!-- ***main con cards*** -->
 
 		<main>
-			<form id="filtros">
+			<form id="filtros" class="hidden">
 				<select name="especialidad-select" id="especialidad-select">
 					<option value="">Especialidad</option>
 					<option value="Cirugía pediátrica">Cirugía pediátrica</option>
@@ -38,10 +46,7 @@
 					<option value="Obstetricia">Obstetricia</option>
 					<option value="Trauma">Trauma</option>
 				</select>
-				<!-- <select id="filtro">
-					<option value="mas">Más de 10 temporadas</option>
-					<option value="menos">Menos de 10 temporadas</option>
-				</select> -->
+
 				<select id="temporadas-select">
 					<option value="">Todas las temporadas</option>
 					<option value="2">2</option>
@@ -231,69 +236,8 @@
 				<div class="custom-container">
 					<form class="custom-form" action="" method="post">
 						<h3>Agregar tu personaje</h3>
-						<h4>Recuerda...</h4>
-						<fieldset>
-							<label for="nombre">Nombre de personaje</label>
-							<input
-								type="text"
-								placeholder="Ej. Meredith Grey"
-								tabindex="1"
-								required
-								autofocus
-							/>
-							<label for="especialidad">Especialidad</label>
-							<input
-								type="text"
-								placeholder="Ej. Cirugía general"
-								tabindex="2"
-								required
-							/>
-
-							<label for="temporadas">Temporadas en las que aparece</label>
-							<input type="number" placeholder="Ej. 20" tabindex="3" required />
-
-							<label for="estado">Estado</label>
-							<input type="text" placeholder="Ej. Vivo" tabindex="4" required />
-
-							<label for="imagen">Imagen</label>
-							<input
-								type="url"
-								placeholder="Ej. https://ejemplo.jpg"
-								tabindex="5"
-								required
-							/>
-						</fieldset>
-						<fieldset>
-							<label for="descripcion">Descripción</label>
-							<textarea
-								placeholder="Ej. Meredith es la protagonista principal de la serie..."
-								tabindex="6"
-								required
-							></textarea>
-
-							<button
-								type="submit"
-								name="submit"
-								data-submit="...Sending"
-								class="btn-agregar-modal"
-							>
-								Agregar personaje
-							</button>
-						</fieldset>
-					</form>
-				</div>
-			</div> -->
-
-		<!-- <div id="modal-eliminar" class="hidden" class="">
-			<div class="content-modal">
-				<p>estas seguro que deseas borrar la informacio</p>
-				<div class="btn-cerrar">
-					<button id="confirmar-eliminar" data-cardId="${id}">
-						Eliminar Personaje</button
-					><button id="cancelar-eliminar">Cancelar</button>
-				</div>
-			</div>
-		</div> -->
+						<h4>Recuerda...</h4> -->
+		<!-- +++++ -->
 
 		<script src="dom.js"></script>
 		<script src="main.js"></script>

@@ -1,4 +1,8 @@
 @import "base/reset.scss";
+//****
+@import "themes/variables.scss";
+@import "themes/mixins.scss";
+
 // ***********
 @import "layout/header.scss"; // Importa el archivo _header.scss
 @import "layout/footer.scss";

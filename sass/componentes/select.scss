@@ -1,29 +1,26 @@
 #filtros {
 	margin-bottom: 20px;
-	display: flex; // Alinear los selectores en línea
+	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	padding-top: 20px;
 	gap: 15px;
 	width: 60%;
-
-	// Permitir que se envuelvan cuando el espacio sea insuficiente
 }
 
 #filtros select {
 	padding: 5px;
-	border: 1px solid #5726f5;
+	border: 1px solid $primary-color;
 	border-radius: 20px;
 	background: #edebff;
 	display: inline-block;
 	width: 100%;
 	cursor: pointer;
 	padding: 7px 10px;
-	/* height: 42px; */
 	outline: 0;
 	border: 0;
 	border-radius: 0;
-	background: #4525d385;
+	background: $primary-color;
 	color: #7b7b7b;
 	font-size: 1em;
 	color: #ffffff;
@@ -37,7 +34,7 @@
 
 // ***************
 #filtros select:hover {
-	border-radius: 2px solid #4525d385;
+	border-radius: 2px solid #220e7985;
 }
 
 @media screen and (max-width: 780px) {

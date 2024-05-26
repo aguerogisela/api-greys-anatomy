@@ -1,6 +1,7 @@
 const container = document.getElementById("main-container");
 const spinner = document.querySelector(".spinner_container");
 const btnnuevoPersonaje = document.getElementById("btn-nuevo-personaje");
+const filtrosForm = document.getElementById("filtros");
 
 const baseUrl = "https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes";
 
@@ -42,6 +43,9 @@ const renderPersonajes = (personajes) => {
 			});
 
 			asignarEventosVerDetalle(document.querySelectorAll(".card-detalle-btn"));
+			if (filtrosForm) {
+				filtrosForm.style.display = "flex";
+			}
 		}
 	}, 2000);
 };
@@ -90,6 +94,11 @@ const mostrarDetalleAlummna = (personaje) => {
 	setTimeout(() => {
 		hideSpinner();
 		container.innerHTML = "";
+
+		// Ocultar el formulario de filtros si existe
+		if (filtrosForm) {
+			filtrosForm.style.display = "none";
+		}
 
 		const {
 			nombre,
@@ -226,14 +235,6 @@ const mostrarDetalleAlummna = (personaje) => {
 			</div>
 		</div>`;
 
-		// Ocultar el formulario de filtros
-		const filtros = document.getElementById("filtros");
-		if (filtros) {
-			console.log("Formulario de filtros encontrado. Ocultando...");
-			filtros.classList.add("hidden");
-		} else {
-			console.log("Formulario de filtros no encontrado.");
-		}
 		// funcion regresar
 		document
 			.querySelector(".go_back")
@@ -395,7 +396,9 @@ btnnuevoPersonaje.addEventListener("click", () => {
 					</form>
 				</div>
 			</div>`;
-
+	if (filtrosForm) {
+		filtrosForm.style.display = "none";
+	}
 	const formCrearNuevoPersonaje = document.getElementById(
 		"nuevo-personaje-form"
 	);
@@ -460,43 +463,6 @@ btnnuevoPersonaje.addEventListener("click", () => {
 			.catch((err) => aler(err));
 	});
 });
-//filtrar
-// https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes?especialidad=&estado=&temporadas=
-
-// let especialidad = "";
-// let estado = "";
-// let temporadas = "";
-// const filtrarPersonajes = (especialidad = "", estado = "", temporadas = "") => {
-//  const urlFiltro = `https://66147fdf2fc47b4cf27c6f23.mockapi.io/api/personajes?especialidad=${especialidad}&estado=${estado}&temporadas=${temporadas}`;
-
-//  getPersonajes(urlFiltro);
-// };
-
-// const urlObject = new URLSearchParams(baseUrl.search);
-// document
-//  .getElementById("especialidad-select")
-//  .addEventListener("change", (e) => {
-//      especialidad = e.target.value;
-//      urlObject.set("especialidad", e.target.value);
-//      console.log(urlObject);
-//      console.log(`${baseUrl}/?${urlObject}`);
-//      getPersonajes(`${baseUrl}/?${urlObject}`);
-//  });
-
-// document.getElementById("temporadas-select").addEventListener("change", (e) => {
-//  const temporadasFilter = e.target.value;
-//  const url = temporadasFilter
-//      ? `${baseUrl}?temporadas=${temporadasFilter}`
-//      : baseUrl;
-//  getPersonajes(url);
-// });
-
-// document.getElementById("estado-select").addEventListener("change", (e) => {
-//  estado = e.target.value;
-//  urlObject.set("estado", e.target.value);
-
-//  getPersonajes(`${baseUrl}/?${urlObject}`);
-// });
 
 const urlObject = new URLSearchParams(baseUrl.search);
 document
@@ -520,12 +486,3 @@ document.getElementById("estado-select").addEventListener("change", (e) => {
 	urlObject.set("estado", estado);
 	getPersonajes(`${baseUrl}/?${urlObject}`);
 });
-// if (temporadasFilter) {
-//  if (temporadasFilter === "5-10") {
-//      url += "?temporadas=>5&temporadas=<10";
-//  } else if (temporadasFilter === "5") {
-//      url += "?temporadas=<5";
-//  } else if (temporadasFilter === "10") {
-//      url += "?temporadas=>10";
-//  }
-// }

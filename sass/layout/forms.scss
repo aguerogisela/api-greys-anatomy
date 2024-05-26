@@ -9,10 +9,6 @@
 .container-form-editar {
 	display: flex;
 	justify-content: center;
-	// width: 90%;
-	// margin: 50px auto;
-	// display: flex;
-	// justify-content: center;
 }
 
 .custom-form,
@@ -21,9 +17,9 @@
 	background: #ffffff;
 	border-radius: 10px;
 	box-shadow: 5px 10px 30px 1px rgba(0, 0, 0, 0.15);
-	max-width: 600px; /* Ajusta el ancho máximo según tu preferencia */
+	max-width: 600px;
 	width: 100%;
-	margin: auto; /* Centrar el formulario en pantallas grandes */
+	margin: auto;
 }
 
 .custom-form,
@@ -59,11 +55,11 @@ textarea {
 	margin-block: 8px;
 	padding: 12px;
 	border-radius: 5px;
-	font-size: 16px; /* Tamaño del texto más grande en pantallas grandes */
+	font-size: 16px;
 	color: #88888c;
 }
 label {
-	margin-bottom: 8px; /* Separación entre el borde inferior de la etiqueta y el campo de entrada */
+	margin-bottom: 8px;
 }
 .close-btn {
 	background: none;
